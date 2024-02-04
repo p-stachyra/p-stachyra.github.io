@@ -1,5 +1,8 @@
 # Site settings
-remote_theme: "benbalter/retlab@v1.0.0"
+remote_theme: "mmistakes/minimal-mistakes@4.19.3"
+
+minimal_mistakes_skin: "default"
+minimal_mistakes_skin2: "dark"
 
 
 title: Piotr Stachyra
@@ -72,22 +75,7 @@ defaults:
       comments: true
       share: true
       related: true
-  # - scope:
-  #     path: ""
-  #     type: portfolio
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     related: true
 
-# SEO related
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "UA-154432000-1"
-#     anonymize_ip: false # default
-# google_site_verification: google9c27511a2a69fff6.html
 
 # category_archive:
 #   type: liquid
