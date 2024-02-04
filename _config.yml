@@ -8,3 +8,8 @@ theme: jekyll-theme-minimal
 collections:
   posts:
     output: true
+
+
+markdown: kramdown
+kramdown:
+    math_engine: katex
