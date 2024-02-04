@@ -44,6 +44,22 @@
       {{ content }}
 
       </section>
+
+      <section>
+        {% for doc in site.posts %}
+          <article>
+            <div class="article-title>
+              {{ doc.title | default: Sample Article }}
+            </div>
+            <div class="artcle-summary">
+              {{ doc.excerpt }}
+            </div>
+            <a href="{{ doc.url }}" title="Read More..">Read More</a>
+          </article>
+        {% endfor %}
+      </section>
+
+
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
