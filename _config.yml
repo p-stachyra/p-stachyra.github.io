@@ -30,7 +30,6 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
-  - _portfolio
 
 # Plugins (previously gems:)
 plugins:
@@ -47,9 +46,6 @@ author:
   avatar: "/assets/images/profile2.jpg"
   bio: "Data scientist | TNO | Msc. Utrecht Univeristy Applied Data Science"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "pj.stachyra@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/p-stachyra"
@@ -58,10 +54,10 @@ author:
       url: "https://www.linkedin.com/in/piotr-stachyra/"
 
 # Collections
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+# collections:
+#   portfolio:
+#     output: true
+#     permalink: /:collection/:path/
 
 defaults:
   # _posts
