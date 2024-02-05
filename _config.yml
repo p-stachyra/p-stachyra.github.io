@@ -68,6 +68,20 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
 
+author:
+  name: "Piotr Stachyra"
+  avatar: "/assets/images/IMG_6463.jpeg"
+  bio: "Data scientist * TNO * Msc. Applied Data Science Utrecht University."
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "pj.stachyra@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/p-stachyra"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/piotr-stachyra/"
 
 footer:
   links:
