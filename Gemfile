@@ -3,9 +3,9 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 gem "minimal-mistakes-jekyll"
 gem "tzinfo-data"
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
-gem "activesupport", ">= 4.1.11"
-gem "kramdown", ">= 2.3.0"
+gem "wdm"
+gem "activesupport"
+gem "kramdown"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
