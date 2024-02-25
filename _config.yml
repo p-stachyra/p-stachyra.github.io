@@ -71,7 +71,7 @@ plugins:
 author:
   name: "Piotr Stachyra"
   avatar: "/assets/images/IMG_6463.jpeg"
-  bio: "Data scientist • TNO • Msc. Applied Data Science Utrecht University."
+  bio: "Data scientist • TNO • Msc. Applied Data Science Utrecht University"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
