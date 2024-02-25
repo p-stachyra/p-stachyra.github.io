@@ -6,7 +6,6 @@ categories:
 tags:
   - ASR Whisper OpenAI translation video audio
 ---
-# Automatic Speech Recognition, Translation & Automatic Subtitles Alignment
 
 Have you ever thought how cool it would be to speak in your own langauge to a person from another country. Well, it might be that they do not understand what you are saying at all... <br>
 OpenAI's Whisper comes to help us, by providing us with easy means to generate automatic translation. <br><br>
