@@ -1,10 +1,10 @@
 ---
-title: "Low-Level Acoustic Features"
-date: 2024-02-04
+title: "Automatic Speech Recognition, Translation & Automatic Subtitles Alignment"
+date: 2024-02-25
 categories:
   - posts
 tags:
-  - acoustic-features audio amplitude-envelope
+  - ASR Whisper OpenAI translation video audio
 ---
 # Automatic Speech Recognition, Translation & Automatic Subtitles Alignment
 
@@ -351,8 +351,8 @@ def create_video(transcription_data: dict, clip_path: str, output_path: str):
         start_time = int(segment["start"])
         end_time = int(segment["end"])
         duration = end_time - start_time
-        caption_clip = TextClip(segment["text"], fontsize=16, color="white", bg_color="transparent", stroke_color="black", stroke_width=1)
-        # caption_clip = caption_clip.set_pos(("center", "bottom"))
+        caption_clip = TextClip(segment["text"], fontsize=16, color="white", bg_color="transparent", stroke_color="black", stroke_width=0.5)
+        caption_clip = caption_clip.set_pos(("center", "bottom"))
         caption_clip = caption_clip.set_duration(duration)
         caption_clip = caption_clip.set_start(start_time)
         subtitle_clips.append(caption_clip)
@@ -403,7 +403,7 @@ create_video(transcription_data=transcription, clip_path="data/sample_whisper_mo
 
 
 
-<video width="320" height="240" controls>
+<video width="800" height="500" controls>
   <source src="/assets/videos/output_whisper_model_clip.mp4" type="video/mp4">
   <source src="/assets/videos/output_whisper_model_clip.ogg" type="video/ogg">
 Your browser does not support the video tag.
