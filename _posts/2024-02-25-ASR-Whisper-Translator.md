@@ -4,7 +4,12 @@ date: 2024-02-25
 categories:
   - posts
 tags:
-  - ASR Whisper OpenAI translation video audio
+  - ASR
+  - Whisper 
+  - OpenAI 
+  - autotranslation 
+  - video data
+  - audio data
 ---
 
 Have you ever thought how cool it would be to speak in your own langauge to a person from another country. Well, it might be that they do not understand what you are saying at all... <br>
@@ -70,7 +75,7 @@ from scipy.fft import fft
 AUDIO = "data/sample_whisper_model.mp4"
 ```
 
-In this section we will shortly inspect how the audio sample looks like, what kind of low-level features can be extracted, what are we going to work on. FIrst, we need to load the audio sample using Whisper's load_audio method.
+In this section we will shortly inspect how the audio sample looks like, what kind of low-level features can be extracted, what are we going to work on. First, we need to load the audio sample using Whisper's `load_audio` method.
 
 
 ```python
@@ -106,7 +111,7 @@ def plot_waveform(signal: np.array, sr: int, title: str, save_to: str) -> None:
 
 ```
 
-Since we know that the video takes around 7 seconds, we can estimate that the sampling rate in this case is 16000 Hz. We will assigned it to a constant that will be re-used for the exploratory part.
+Since we know that the video takes around 7 seconds, we can estimate that the sampling rate in this case is 16000 Hz. We will assign it to a constant that will be re-used for the exploratory part.
 
 
 ```python
@@ -126,7 +131,7 @@ plot_waveform(signal=sample, sr=SR, title="Waveform: Sample I", save_to="assets/
 
 We can see the visual representation of the audio we are processing - the plot displays the audio's amplitude in time.
 
-We can also inspect the mel-spectrogram with intensities expressed in the perceptual scale (decibeles), which can be done with Librosa library. Because we are analyzing human speech, this melodic (mel) scale suits the frequencies of interest just fine.
+We can also inspect the mel-spectrogram with intensities expressed in the perceptual scale (decibeles), which can be done with Librosa library. Because we are analyzing human speech, the mel (melodic) scale suits the frequencies of interest just fine.
 
 
 ```python
@@ -149,7 +154,7 @@ get_mel_spectrogram(audio_signal=sample, sampling_rate=SR, title="Mel-Spectrogra
     
 
 
-Now, having an initial overview of the sound we will be analyzing with Whisper, let's define a class for the translator and see what features can be extracted with Whisper.
+Now, having an initial overview of the sound we will be analyzing with the ASR model, let's define a class for the translator and see what features can be extracted with Whisper.
 
 
 ```python
@@ -224,7 +229,7 @@ class Translator:
 
 ## Exploring Whisper model's functionality
 
-First, let's instantiate the Translator class with a small model, operating on the CPU and with 80 mel features.
+First, let's instantiate the Translator class with a small model, operating on the CPU, with 80 mel input features.
 
 
 ```python
@@ -236,7 +241,7 @@ translator = Translator(model_name="small", device="cpu", number_mels=80)
 audio_sample = whisper.load_audio(AUDIO)
 ```
 
-Similarly, as before, we can get a sample's Mel-spectrogram, however, this time it is fit to the expected inputs of the Whisper model. Nevertheless, it is interesting to see what the model is operating on to extract features such as the detected language. 
+Similarly, as before, we can get a sample's Mel-spectrogram, however, this time it is fit to the expected inputs of the Whisper model. Nevertheless, it is interesting to see what the model is operating on to pre-process the features, such as the detected language. 
 
 
 ```python
@@ -260,7 +265,8 @@ get_whisper_mel_spectrogram(audio_sample=audio_sample,
     
 
 
-Now, having the entire Translator ready, we can try to translate any source in an arbitrary language to English. Let's have a look at the detected language first.
+Now, having the entire Translator ready, we can try to translate any source audio in an arbitrary language to English. <br>
+Let's have a look at the detected language first.
 
 ## Assessing the functionality
 
@@ -329,7 +335,7 @@ for element in transcription["segments"]:
     Key: no_speech_prob    Value: 0.019939523190259933
     
 
-As we can see, we get the start, end indices, the text for each segment, the tokenized text array, the temperature model hyperparemeter, and other interesting features. The average log-probability, the compression ratio, and the probability of silent part.        
+As we can see, we get the start, end indices, the text for each segment, the tokenized text array, the temperature model hyperparemeter, and other interesting features: the average log-probability, the compression ratio, and the probability of silent part.        
 
 The compression ratio is a measure on the repeated sequences. In a nutshell, a text with many repeated sequences can be compressed down much more than a text with sequences occurring only once. 
 It allows to prevent the model repeating itself when it generates the preditions for the sequences.
