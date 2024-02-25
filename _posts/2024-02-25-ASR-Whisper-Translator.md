@@ -403,8 +403,8 @@ create_video(transcription_data=transcription, clip_path="data/sample_whisper_mo
 
 
 <video width="800" height="500" controls>
-  <source src="/assets/videos/output_whisper_model_clip.mp4" type="video/mp4">
-  <source src="/assets/videos/output_whisper_model_clip.ogg" type="video/ogg">
+  <source src="/assets/videos/output_whisper_model_clip2.mp4" type="video/mp4">
+  <source src="/assets/videos/output_whisper_model_clip2.ogg" type="video/ogg">
 Your browser does not support the video tag.
 </video>
 
